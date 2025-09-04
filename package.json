@@ -1,0 +1,25 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "namaste react",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srinivasthiruvattur97/namaste-react.git"
+  },
+  "author": "srinivas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srinivasthiruvattur97/namaste-react/issues"
+  },
+  "homepage": "https://github.com/srinivasthiruvattur97/namaste-react#readme",
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
