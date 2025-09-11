@@ -2,6 +2,7 @@ import { mockData } from "../utils/mockData";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]); //Array destructuring where arr[0] is restaurantList and arr[1] is setRestaurantList
@@ -81,10 +82,12 @@ const Body = () => {
       <div className="restaurant-container">
         {filteredResList.map((restaurant) => {
           return (
-            <RestaurantCard
+            <Link
               key={restaurant?.info?.id}
-              restaurantData={restaurant}
-            />
+              to={"/restaurants/" + restaurant?.info?.id}
+            >
+              <RestaurantCard restaurantData={restaurant} />
+            </Link>
           );
         })}
       </div>
