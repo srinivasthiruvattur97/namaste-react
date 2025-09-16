@@ -3,11 +3,13 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]); //Array destructuring where arr[0] is restaurantList and arr[1] is setRestaurantList
   const [filteredResList, setFilteredResList] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
     fetchData();
@@ -25,11 +27,14 @@ const Body = () => {
     setRestaurantList(liveData);
     setFilteredResList(liveData);
   };
-  if (restaurantList.length === 0) {
-    return <Shimmer />;
+
+  if (!onlineStatus) {
+    return <h1>You are Offline!!!! Please check your internet connection</h1>;
   }
 
-  return (
+  return !restaurantList.length ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter-bar">
         <div className="search-bar">
