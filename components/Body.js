@@ -36,9 +36,10 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter-bar">
-        <div className="search-bar">
+      <div className="flex">
+        <div className=" m-2 p-2 flex items-center">
           <input
+            className="mx-1 border border-solid border-black"
             type="text"
             placeholder="Search food items..."
             value={searchText}
@@ -47,6 +48,7 @@ const Body = () => {
             }}
           />
           <button
+            className="bg-green-300 px-2 rounded-lg dark:md:hover:bg-green-900"
             onClick={() => {
               console.log(restaurantList);
               const filteredList = restaurantList.filter((res) => {
@@ -60,8 +62,9 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className="top-rated-filter">
+        <div className="flex items-center mx-2">
           <button
+            className="bg-blue-400 px-2 mx-4 rounded-lg"
             onClick={() => {
               console.log(restaurantList);
               const filteredList = restaurantList.filter((res) => {
@@ -73,9 +76,8 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
-        </div>
-        <div className="clear-filter">
           <button
+            className="bg-red-400 px-2 mx-4 rounded-lg"
             onClick={() => {
               setFilteredResList(mockData);
             }}
@@ -84,7 +86,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="restaurant-container">
+      <div className="flex flex-wrap">
         {filteredResList.map((restaurant) => {
           return (
             <Link
