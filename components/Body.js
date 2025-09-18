@@ -27,6 +27,7 @@ const Body = () => {
     setRestaurantList(liveData);
     setFilteredResList(liveData);
   };
+  console.log(restaurantList);
 
   if (!onlineStatus) {
     return <h1>You are Offline!!!! Please check your internet connection</h1>;
