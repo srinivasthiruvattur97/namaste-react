@@ -1,5 +1,5 @@
 import { mockData } from "../utils/mockData";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withVegLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -31,6 +31,8 @@ const Body = () => {
   if (!onlineStatus) {
     return <h1>You are Offline!!!! Please check your internet connection</h1>;
   }
+
+  const VegRestaurantCard = withVegLabel(RestaurantCard);
 
   return !restaurantList.length ? (
     <Shimmer />
@@ -93,7 +95,11 @@ const Body = () => {
               key={restaurant?.info?.id}
               to={"/restaurants/" + restaurant?.info?.id}
             >
-              <RestaurantCard restaurantData={restaurant} />
+              {restaurant?.info?.isOpen ? (
+                <VegRestaurantCard restaurantData={restaurant} />
+              ) : (
+                <RestaurantCard restaurantData={restaurant} />
+              )}
             </Link>
           );
         })}

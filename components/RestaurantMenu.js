@@ -13,7 +13,8 @@ const RestaurantMenu = () => {
     resInfo?.data?.cards[2]?.card?.card?.info;
   const resMenu =
     resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card
-      ?.card?.categories[0]?.itemCards;
+      ?.card?.itemCards;
+
   return (
     <div className="res-menu">
       <h1>{name}</h1>

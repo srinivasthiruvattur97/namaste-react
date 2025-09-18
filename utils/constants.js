@@ -6,3 +6,5 @@ export const CDN_URL =
 
 export const MENU_URL =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0163134&lng=77.6784812&restaurantId=";
+
+export const VEG_SVG = "https://freesvg.org/img/1531813273.png";
