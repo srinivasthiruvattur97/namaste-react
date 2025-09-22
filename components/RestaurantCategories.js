@@ -1,10 +1,13 @@
 import { ItemList } from "./ItemList";
 import { useState } from "react";
 
-const MenuCategories = ({ category }) => {
-  const [showItems, setShowItems] = useState(false);
-  const onCLicked = () => {
-    setShowItems(!showItems);
+const MenuCategories = ({ category, showItems, setShowIndex, index }) => {
+  const onClicked = () => {
+    if (showItems) {
+      setShowIndex(null); // collapse if already open
+    } else {
+      setShowIndex(index); // open this one
+    }
   };
   console.log(category);
   const menuItems = category.card.card.itemCards;
@@ -15,7 +18,7 @@ const MenuCategories = ({ category }) => {
         <div
           className="flex justify-between hover:bg-gray-200"
           onClick={() => {
-            onCLicked();
+            onClicked();
           }}
         >
           <span className="font-bold py-3">

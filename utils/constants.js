@@ -8,3 +8,6 @@ export const MENU_URL =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0163134&lng=77.6784812&restaurantId=";
 
 export const VEG_SVG = "https://freesvg.org/img/1531813273.png";
+
+export const IMAGE_NOT_AVAILABLE =
+  "https://thumbs.dreamstime.com/b/image-not-available-icon-vector-set-white-background-eps-330821927.jpg";
