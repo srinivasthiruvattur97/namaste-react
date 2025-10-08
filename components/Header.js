@@ -38,7 +38,7 @@ const Header = () => {
           <li className="px-4 ">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className={`px-4 m-1 " ${cartItemsCount && "font-bold"}`}>
+          <li className={`px-4 mx-1 " ${cartItemsCount && "font-bold"}`}>
             <Link to="/cart">{`Cart ${displayText}`}</Link>
           </li>
           <li className="font-bold pr-2">{loggedInUser}</li>

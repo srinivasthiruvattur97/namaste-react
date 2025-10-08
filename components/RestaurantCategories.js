@@ -11,7 +11,6 @@ const MenuCategories = ({ category, showItems, setShowIndex, index }) => {
   };
   console.log(category);
   const menuItems = category.card.card.itemCards;
-  console.log(menuItems);
   return (
     <div>
       <div className="w-6/12 mx-auto my-5 shadow-lg bg-gray-100 cursor-pointer">
